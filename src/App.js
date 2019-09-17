@@ -1,6 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+// Definir como function
+// function Hello (props) {
+//   return <h2>{props.title}</h2>
+// }
+
+// Definir como arrow function
+// const Hello = (props) => <h2>{props.title}</h2>
+
+class Hello extends Component {
+  render () {
+    return <h2>{this.props.title}</h2>
+  }
+}
 
 function App() {
   return (
@@ -10,6 +24,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Hello title='test'/>
         <a
           className="App-link"
           href="https://reactjs.org"
