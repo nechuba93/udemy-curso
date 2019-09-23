@@ -11,7 +11,13 @@ class Contador extends Component {
   }
 
   render () {
-    return <span>{this.state.contador}</span>
+    return <ContadorNumero numero={this.state.contador} />
+  }
+}
+
+class ContadorNumero extends Component {
+  render () {
+    return <span>{this.props.numero}</span>
   }
 }
 
