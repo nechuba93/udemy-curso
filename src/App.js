@@ -1,28 +1,22 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-// Definir como function
-// function Hello (props) {
-//   return <h2>{props.title}</h2>
-// }
-
-// Definir como arrow function
-// const Hello = (props) => <h2>{props.title}</h2>
-class Title extends Component {
-  render () {
-    return <h1>{this.props.text}</h1>
+class Contador extends Component {
+  constructor () {
+    super()
+    this.state = { contador: 1}
   }
-}
 
-Title.defaultProps = {
-  text: 'Default'
+  render () {
+    return <span>{this.state.contador}</span>
+  }
 }
 
 function App() {
   return (
     <div className="App">
-      <Title text='no' />
+      <p>Primer componente con state</p>
+      <Contador />
     </div>
   );
 }
