@@ -18,14 +18,15 @@ class Hello extends Component {
 
 class Text extends Component {
   render () {
-    const textoSegunBool = this.props.boolean ? 'Cierto' : 'Falso'
-    const mappedNumbers = this.props.arrayOfNumbers.map(n => n*2)
+    const { 
+      arrayOfNumbers, 
+      multiply,
+      title 
+    } = this.props
+    const mappedNumbers = arrayOfNumbers.map(multiply)
     return (
       <div>
-        <p>{this.props.text}</p>
-        <p>{this.props.number}</p>
-        <p>{textoSegunBool}</p>
-        <p>{this.props.arrayOfNumbers.join(', ')}</p>
+        {title}
         <p>{mappedNumbers.join(', ')}</p>
         <p>{this.props.objectWithInfo.key}</p>
       </div>
@@ -43,7 +44,9 @@ function App() {
           arrayOfNumbers={[2,3,10]}
           objectWithInfo={{key: 'First value', key2: 'othervalue'}}
           boolean
-          number={2} 
+          number={2}
+          multiply={(number) => number*4}
+          title={<h1>TITULO</h1>} 
           text='Text en string' 
         />
       </header>
