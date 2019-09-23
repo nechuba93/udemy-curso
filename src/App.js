@@ -16,23 +16,36 @@ class Hello extends Component {
   }
 }
 
+class Text extends Component {
+  render () {
+    const textoSegunBool = this.props.boolean ? 'Cierto' : 'Falso'
+    const mappedNumbers = this.props.arrayOfNumbers.map(n => n*2)
+    return (
+      <div>
+        <p>{this.props.text}</p>
+        <p>{this.props.number}</p>
+        <p>{textoSegunBool}</p>
+        <p>{this.props.arrayOfNumbers.join(', ')}</p>
+        <p>{mappedNumbers.join(', ')}</p>
+        <p>{this.props.objectWithInfo.key}</p>
+      </div>
+    )
+  }
+}
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <Hello title='test'/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Text 
+          arrayOfNumbers={[2,3,10]}
+          objectWithInfo={{key: 'First value', key2: 'othervalue'}}
+          boolean
+          number={2} 
+          text='Text en string' 
+        />
       </header>
     </div>
   );
