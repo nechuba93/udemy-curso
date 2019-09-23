@@ -16,7 +16,7 @@ class App extends Component {
         <h4>Formularios</h4>
         <form>
           <p>
-            <label>Nombre: </label>
+            <label htmlFor='name'>Nombre: </label>
             <input
               id='name'
               name='username'
@@ -24,7 +24,7 @@ class App extends Component {
             </input>
           </p>
           <p>
-            <label>Twitter: </label>
+            <label htmlFor='twitter'>Twitter: </label>
             <input
               id='twitter'
               name='twitterAccount'
