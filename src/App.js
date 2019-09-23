@@ -3,15 +3,23 @@ import './App.css';
 
 class App extends Component {
 
+  constructor () {
+    super() 
+    this.state = {
+      inputName: '',
+      inputTwitter: '@',
+      inputTerms: true
+    }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
-    const name = this.inputName.value
-    const email = document.getElementById('twitter').value
-    console.log({name, email});
+    console.log(this.state);
   }
 
   handleChange = (e) => {
     console.log(e.target.checked);
+    this.setState({inputTerms: e.target.checked})
   }
 
   render () {
@@ -24,8 +32,10 @@ class App extends Component {
             <input
               id='name'
               name='username'
+              onChange={e => this.setState({inputName: e.target.value})}
               placeholder='Introduce el nombre'
-              ref={inputElement => this.inputName = inputElement}>
+              ref={inputElement => this.inputName = inputElement}
+              value={this.state.inputName}>
             </input>
           </p>
           <p>
@@ -33,13 +43,17 @@ class App extends Component {
             <input
               id='twitter'
               name='twitterAccount'
-              placeholder='Introduce el nombre'>
+              onChange={e => this.setState({inputTwitter: e.target.value})}
+              placeholder='Introduce el nombre'
+              value={this.state.inputTwitter}>
             </input>
           </p>
           <p>
             <label htmlFor='twitter'>
-            <input type='checkbox' onChange={this.handleChange}></input>
-            Twitter: </label>
+            <input 
+              checked={this.state.inputTerms}
+              type='checkbox' onChange={this.handleChange}></input>
+            Aceptar términos </label>
           </p>
           <button>Enviar</button>
         </form>
