@@ -1,37 +1,15 @@
 import React, {Component} from 'react';
+import ConditionalSection from './sections/conditional'
 import './App.css';
 
-class Contador extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { contador: this.props.contadorInicial}
-    setInterval(() => {
-      this.setState({contador: this.state.contador + 1})
-    }, 1000);
-  }
-
+class App extends Component {
   render () {
-    return <ContadorNumero numero={this.state.contador} />
+    return (
+      <div className="App">
+        <ConditionalSection />
+      </div>
+    );
   }
-}
-
-Contador.defaultProps = {
-  contadorInicial: 0
-}
-
-class ContadorNumero extends Component {
-  render () {
-    return <span>{this.props.numero}</span>
-  }
-}
-
-function App() {
-  return (
-    <div className="App">
-      <p>Primer componente con state</p>
-      <Contador contadorInicial={100} />
-    </div>
-  );
 }
 
 export default App;
