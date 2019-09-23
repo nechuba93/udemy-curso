@@ -3,18 +3,22 @@ import './App.css';
 
 class App extends Component {
 
-  handleClick = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault()
     const name = this.inputName.value
     const email = document.getElementById('twitter').value
     console.log({name, email});
   }
 
+  handleChange = (e) => {
+    console.log(e.target.checked);
+  }
+
   render () {
     return (
       <div className="App">
         <h4>Formularios</h4>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <p>
             <label htmlFor='name'>Nombre: </label>
             <input
@@ -32,7 +36,12 @@ class App extends Component {
               placeholder='Introduce el nombre'>
             </input>
           </p>
-          <button onClick={this.handleClick}>Enviar</button>
+          <p>
+            <label htmlFor='twitter'>
+            <input type='checkbox' onChange={this.handleChange}></input>
+            Twitter: </label>
+          </p>
+          <button>Enviar</button>
         </form>
       </div>
     );
