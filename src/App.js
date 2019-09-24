@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import ComponentDidMount from './sections/life-cycle/componentDidMount';
+import FetchExample from './sections/life-cycle/fetch-example';
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <ComponentDidMount />
+        <FetchExample />
       </div>
     );
   }
