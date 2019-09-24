@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import FetchExample from './sections/life-cycle/fetch-example';
+import CicloDeActualizacion from './sections/life-cycle/ciclodeActualizacion';
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <FetchExample />
+        <CicloDeActualizacion />
       </div>
     );
   }
