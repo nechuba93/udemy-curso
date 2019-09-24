@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import ComponentWillMount from './sections/life-cycle/componentWillMount';
-import Render from './sections/life-cycle/render';
+import ComponentDidMount from './sections/life-cycle/componentDidMount';
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <Render />
+        <ComponentDidMount />
       </div>
     );
   }
