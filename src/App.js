@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import CicloDeActualizacion from './sections/life-cycle/ciclodeActualizacion';
+import ComponentWillUnmount from './sections/life-cycle/componentWillUnmount'
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <CicloDeActualizacion />
+        <ComponentWillUnmount />
       </div>
     );
   }
