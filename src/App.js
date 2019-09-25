@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import StatelessWithPropTypes from './sections/stateless-proptypes';
+import BitCoinPriceContainer from './sections/container-component';
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <StatelessWithPropTypes />
+        <BitCoinPriceContainer />
       </div>
     );
   }
